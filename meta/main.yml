@@ -10,10 +10,7 @@ galaxy_info:
     - name: EL
       versions:
       - all
-    - name: Ubuntu
-      versions:
-      - all
-    - name: Debian
+    - name: Centos
       versions:
       - all
   galaxy_tags:

@@ -1,0 +1,26 @@
+---
+# tasks file for terraform
+
+- name: "Check the current terraform version"
+  stat:
+    path: '/opt/hashicorp/terraform/{{ terraform_version }}'
+  register: terraform_current
+  changed_when: false
+  check_mode: no
+  tags:
+    - install
+    - purge_old
+    - cleanup
+    - terraform
+
+- name: "Get current version symlink"
+  stat:
+    path: '/usr/bin/terraform'
+  register: current_version
+  changed_when: false
+  check_mode: no
+  tags:
+    - install
+    - purge
+    - cleanup
+    - terraform
